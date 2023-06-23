@@ -1,0 +1,12 @@
+this app is supposed to make the process of insurance easier as well as provide leads and sales insights
+register
+terms
+login
+your agent/
+experience 
+clientele
+cases won 
+cases lost
+conversion for claims
+stability
+vehicles coverage
