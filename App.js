@@ -32,7 +32,7 @@ export default function App() {
       <NavigationContainer theme={darkMode === true ? DarkTheme : DefaultTheme}>
         <Tab.Navigator>
           <Tab.Screen name="Home" component={Home} />
-          <Tab.Screen name="Profile" component={Profile} />
+          <Tab.Screen name="Agent Profile" component={Profile} />
         </Tab.Navigator>
       </NavigationContainer>
     </themeContext.Provider>
