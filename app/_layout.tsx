@@ -34,6 +34,12 @@ export default function RootLayout() {
         <Stack.Screen name="+not-found" />
         <Stack.Screen name="signup" options={{ title: 'Sign Up' }} />
         <Stack.Screen name="forgot-password" options={{ title: 'Forgot Password' }} />
+        <Stack.Screen name="products/[id]" options={{ title: 'Product Details' }} />
+        <Stack.Screen name="products" options={{ title: 'Products' }} />
+        <Stack.Screen name="users/[id]" options={{ title: 'User Profile' }} />
+        <Stack.Screen name="users" options={{ title: 'Users' }} />
+        <Stack.Screen name="insurer/[id]" options={{ title: 'Insurer Details' }} />
+        <Stack.Screen name="insurers" options={{ title: 'Insurers' }} />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>

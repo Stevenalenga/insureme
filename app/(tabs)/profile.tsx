@@ -1,5 +1,19 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import Insurers from '../insurers/insurers';
+import Products from '../products/products';
+
+const Tab = createMaterialTopTabNavigator();
+
+const ProfileTabs = () => {
+    return (
+        <Tab.Navigator>
+            <Tab.Screen name="Insurers" component={Insurers} />
+            <Tab.Screen name="Products" component={Products} />
+        </Tab.Navigator>
+    );
+};
 
 const Profile = () => {
     // Mock data for the agent
@@ -18,22 +32,27 @@ const Profile = () => {
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.header}>Agent Profile</Text>
+
             <View style={styles.detailContainer}>
                 <Text style={styles.label}>Name:</Text>
                 <Text style={styles.value}>{agentDetails.name}</Text>
             </View>
+
             <View style={styles.detailContainer}>
                 <Text style={styles.label}>Code:</Text>
                 <Text style={styles.value}>{agentDetails.code}</Text>
             </View>
+
             <View style={styles.detailContainer}>
                 <Text style={styles.label}>Email:</Text>
                 <Text style={styles.value}>{agentDetails.email}</Text>
             </View>
+
             <View style={styles.detailContainer}>
                 <Text style={styles.label}>Total Insurances Sold:</Text>
                 <Text style={styles.value}>{agentDetails.totalSales}</Text>
             </View>
+
             <Text style={styles.subHeader}>Insurance Types Sold:</Text>
             {agentDetails.insuranceTypes.map((insurance, index) => (
                 <View key={index} style={styles.insuranceContainer}>
@@ -41,6 +60,11 @@ const Profile = () => {
                     <Text style={styles.insuranceCount}>{insurance.count}</Text>
                 </View>
             ))}
+
+            {/* Top Tabs */}
+            <View style={styles.tabsContainer}>
+                <ProfileTabs />
+            </View>
         </ScrollView>
     );
 };
@@ -49,6 +73,7 @@ const styles = StyleSheet.create({
     container: {
         padding: 20,
         backgroundColor: '#f9f9f9',
+        flexGrow: 1,
     },
     header: {
         fontSize: 24,
@@ -85,6 +110,10 @@ const styles = StyleSheet.create({
     },
     insuranceCount: {
         fontSize: 16,
+    },
+    tabsContainer: {
+        marginTop: 20,
+        height: 400, // You can adjust this height as needed
     },
 });
 
