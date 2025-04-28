@@ -75,7 +75,7 @@ export function DashboardSidebar({ className, ...props }: SidebarNavProps) {
       </div>
       <div className="mt-auto">
         <Button variant="ghost" className="w-full justify-start" asChild>
-          <Link href="/logout">
+          <Link href="/login">
             <LogOut className="mr-2 h-4 w-4" />
             Logout
           </Link>
