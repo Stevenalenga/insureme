@@ -63,7 +63,7 @@ export default function DebitNotePage() {
   const handleGeneratePDF = async () => {
     const dateIssued = new Date().toLocaleDateString("en-GB");
 
-    const response = await fetch("http://localhost:8000/generate-debit-note", {
+    const response = await fetch("http://10.30.222.136:8000/generate-debit-note", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

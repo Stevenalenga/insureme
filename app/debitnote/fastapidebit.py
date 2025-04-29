@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
+from fastapi.middleware.cors import CORSMiddleware  
 from pydantic import BaseModel
 from datetime import datetime
 from reportlab.lib.pagesizes import A4
@@ -7,6 +8,14 @@ from reportlab.pdfgen import canvas
 import os
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Your Next.js frontend URL
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 
 class DebitNoteData(BaseModel):
     sum_insured: float
